@@ -282,7 +282,7 @@ int main() {
   ASSERT((N == 26 && Q == 1000) || (N ==26 && Q == 100) || (N == 5 && Q == 7));
 
   REP (i, N) as.pb('A' + i);
-  if (N == 26) SortN26(as.begin(), as.end());
+  if (N == 26) SortN26(ALL(as));
   else SortN5();
 
   COUT("! "); COUT(str(ALL(as))); ENDL(); fflush(stdout);

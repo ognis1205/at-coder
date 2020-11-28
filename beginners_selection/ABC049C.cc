@@ -236,10 +236,10 @@ X_T_Us_X void DEBUG(const T& t, Us&&... us) { cerr << STR(t); cerr << (sizeof...
 str S;
 vec<str> D{"dream", "dreamer", "erase", "eraser"};
 
-bool Check(int i) {
+bool HasSolution(int i) {
   if (i == SIZE(S)) return true;
   TRAV (k, D) {
-    if (S.rfind(k, i) == i && Check(i + SIZE(k))) return true;
+    if (S.rfind(k, i) == i && HasSolution(i + SIZE(k))) return true;
   }
   return false;
 }
@@ -258,7 +258,7 @@ int main(int argc, char* argv[]) {
 
   CIN(S);
   ASSERT(IN(SIZE(S), 1, 1e5)); DBG(S, D);
-  if (Check(0)) {
+  if (HasSolution(0)) {
     COUT("YES"); ENDL(); fflush(stdout);
   } else {
     COUT("NO"); ENDL(); fflush(stdout);
